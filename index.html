@@ -14,6 +14,550 @@
   <title>EFFECT エアコンメンテナンス｜北陸三県（富山・石川・福井）クリーニング・修理・点検</title>
   <link rel="canonical" href="https://effectfujino-a11y.github.io/effect-aircon/">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Shippori+Mincho:wght@400;500;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    /* === Luxury Hero (A案) === */
+    .hero-lux {
+      --bg-beige-deep: #e8dfc8;
+      --bg-light: #f4f2ec;
+      --accent: #c9a96e;
+      --accent-deep: #a88a50;
+      --text-light: #e8e6df;
+      --text-muted: #8a8a82;
+      --text-dark: #1a1a1a;
+      --line: rgba(201, 169, 110, 0.3);
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      min-height: 92vh;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Shippori Mincho', serif;
+    }
+    .hero-lux .lux-left {
+      background: #f4f2ec;
+      color: var(--text-dark);
+      padding: 120px 56px 72px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      border-right: 1px solid rgba(201, 169, 110, 0.25);
+    }
+    .hero-lux .lux-left::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(168, 138, 80, 0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(168, 138, 80, 0.18) 1px, transparent 1px);
+      background-size: 80px 80px;
+      opacity: 0.6;
+      mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-lux .lux-orb {
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 65%);
+      top: -100px; right: -150px;
+      filter: blur(10px);
+      animation: luxFloat 18s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes luxFloat {
+      0%,100% { transform: translate(0,0) scale(1); }
+      50% { transform: translate(-40px,40px) scale(1.1); }
+    }
+    .hero-lux .lux-subcopy {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(18px, 2vw, 24px);
+      color: var(--accent-deep);
+      letter-spacing: 0.02em;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-lux .lux-subcopy::before {
+      content: '';
+      display: inline-block;
+      width: 40px; height: 1px;
+      background: var(--accent-deep);
+      vertical-align: middle;
+      margin-right: 16px;
+    }
+    .hero-lux h1.lux-title {
+      font-family: 'Shippori Mincho', serif;
+      font-weight: 500;
+      font-size: clamp(38px, 5.4vw, 68px);
+      line-height: 1.18;
+      letter-spacing: 0.02em;
+      color: var(--text-dark);
+      margin: 0 0 36px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-lux h1.lux-title em {
+      font-style: normal;
+      color: #8a6e35;
+      font-weight: 700;
+    }
+    .hero-lux .lux-desc {
+      font-size: 15px;
+      line-height: 2;
+      color: #555;
+      max-width: 480px;
+      margin-bottom: 44px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-lux .lux-cta-group {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-lux .lux-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 28px;
+      background: var(--accent);
+      color: #f4f2ec;
+      border: 1px solid var(--accent);
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    .hero-lux .lux-cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: transparent;
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
+      z-index: -1;
+    }
+    .hero-lux .lux-cta:hover {
+      background: transparent;
+      color: var(--accent-deep);
+    }
+    .hero-lux .lux-cta .arrow { transition: transform 0.4s ease; }
+    .hero-lux .lux-cta:hover .arrow { transform: translateX(6px); }
+    .hero-lux .lux-cta-sec {
+      color: #555;
+      text-decoration: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+    .hero-lux .lux-cta-sec:hover { color: var(--accent-deep); }
+    .hero-lux .lux-marker {
+      position: absolute;
+      left: 24px; top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+      transform-origin: left center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: #7a6a45;
+      white-space: nowrap;
+    }
+    .hero-lux .lux-right {
+      background: #fff;
+      color: var(--text-dark);
+      padding: 120px 48px 72px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-lux .lux-qnum {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: var(--accent);
+      margin-bottom: 32px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .hero-lux .lux-qnum::after {
+      content: '';
+      flex: 1; height: 1px;
+      background: var(--line);
+    }
+    .hero-lux .lux-qlabel {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .hero-lux .lux-qhead {
+      font-family: 'Shippori Mincho', serif;
+      font-size: clamp(22px, 2.6vw, 32px);
+      line-height: 1.6;
+      color: var(--text-dark);
+      margin: 0 0 40px;
+      font-weight: 400;
+    }
+    .hero-lux .lux-qhead strong {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .hero-lux .lux-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+    .hero-lux .lux-stat-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .hero-lux .lux-stat-value span {
+      font-size: 16px;
+      color: var(--accent);
+    }
+    .hero-lux .lux-stat-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #888;
+    }
+    .hero-lux .lux-year {
+      position: absolute;
+      bottom: 28px; right: 32px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: #999;
+      font-size: 13px;
+    }
+    .hero-lux .lux-year::before { content: '— '; }
+    @media (max-width: 960px) {
+      .hero-lux { grid-template-columns: 1fr; }
+      .hero-lux .lux-left { padding: 100px 24px 56px; min-height: 70vh; }
+      .hero-lux .lux-right { padding: 64px 24px 56px; }
+      .hero-lux .lux-marker { display: none; }
+      .hero-lux .lux-stats { grid-template-columns: 1fr; gap: 18px; }
+    }
+
+    /* === Header override (beige + gold) === */
+    .header {
+      background: #f4f2ec !important;
+      border-bottom: 1px solid rgba(201, 169, 110, 0.3);
+      box-shadow: none !important;
+    }
+    .header.scrolled {
+      background: rgba(244, 242, 236, 0.96) !important;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06) !important;
+    }
+    .header .logo {
+      color: #1a1a1a !important;
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 0.15em;
+    }
+    .header .logo-icon { color: #c9a96e !important; }
+    .header .nav a {
+      color: #555 !important;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+    .header .nav a:hover { color: #c9a96e !important; }
+    .header .nav a.btn {
+      background: transparent !important;
+      color: #1a1a1a !important;
+      border: 1px solid #c9a96e !important;
+      border-radius: 0 !important;
+      padding: 10px 18px !important;
+      text-transform: uppercase;
+    }
+    .header .nav a.btn:hover {
+      background: #c9a96e !important;
+      color: #f4f2ec !important;
+    }
+    .header .menu-toggle span { background: #1a1a1a !important; }
+
+    /* === Icon styling (Font Awesome) === */
+    .header .logo-icon { font-size: 18px; margin-right: 4px; }
+    .reason-icon {
+      font-size: 42px !important;
+      color: #c9a96e !important;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px; height: 80px;
+      border: 1px solid rgba(201,169,110,0.3);
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    .service-emoji {
+      font-size: 48px !important;
+      color: #c9a96e !important;
+    }
+    .commercial-icon {
+      font-size: 36px !important;
+      color: #c9a96e !important;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px; height: 64px;
+      background: rgba(201,169,110,0.08);
+      border-radius: 50%;
+      margin-bottom: 16px;
+    }
+    .any-feature-icon {
+      color: #c9a96e !important;
+      font-size: 22px !important;
+    }
+    .contact-box h3 .fa,
+    .contact-box h3 i { color: #c9a96e; margin-right: 8px; }
+    .hero-badges i { color: #c9a96e; margin-right: 4px; }
+    .price-features li i { color: #c9a96e; margin-right: 6px; }
+    .footer-brand .logo-icon { color: #c9a96e; }
+
+    /* === Global luxury unification === */
+    body {
+      font-family: 'Shippori Mincho', serif !important;
+      background: #f4f2ec;
+      color: #1a1a1a;
+    }
+    .section-title {
+      font-family: 'Shippori Mincho', serif !important;
+      font-weight: 500 !important;
+      color: #1a1a1a !important;
+      letter-spacing: 0.04em;
+    }
+    .section-title span {
+      color: #c9a96e !important;
+      font-weight: 700;
+    }
+    .section-sub {
+      color: #8a8a82 !important;
+      font-family: 'Shippori Mincho', serif;
+    }
+
+    /* Buttons → gold minimal */
+    .btn {
+      border-radius: 0 !important;
+      font-family: 'JetBrains Mono', monospace !important;
+      letter-spacing: 0.18em !important;
+      text-transform: uppercase !important;
+      font-weight: 400 !important;
+      transition: all 0.4s ease !important;
+    }
+    .btn-primary {
+      background: #c9a96e !important;
+      border: 1px solid #c9a96e !important;
+      color: #0a0e0c !important;
+    }
+    .btn-primary:hover {
+      background: transparent !important;
+      color: #c9a96e !important;
+    }
+    .btn-outline {
+      background: transparent !important;
+      border: 1px solid #c9a96e !important;
+      color: #1a1a1a !important;
+    }
+    .btn-outline:hover {
+      background: #c9a96e !important;
+      color: #0a0e0c !important;
+    }
+
+    /* Section backgrounds */
+    .reasons, .services, .pricing, .flow, .faq, .contact,
+    .commercial, .any-aircon {
+      background: #f4f2ec !important;
+    }
+    .services, .flow, .contact {
+      background: #fff !important;
+    }
+
+    /* Cards — flat luxury */
+    .reason-card, .service-card, .commercial-card,
+    .price-card, .flow-step, .faq-item, .contact-box {
+      background: #fff !important;
+      border: 1px solid rgba(201,169,110,0.2) !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      transition: border-color 0.3s ease;
+    }
+    .reason-card:hover, .service-card:hover, .commercial-card:hover {
+      border-color: #c9a96e !important;
+    }
+    .reason-card h3, .service-card h3, .commercial-card h3,
+    .price-header h3, .flow-step h3, .contact-box h3,
+    .any-feature h3 {
+      font-family: 'Shippori Mincho', serif !important;
+      color: #1a1a1a !important;
+      font-weight: 500 !important;
+    }
+
+    /* Service image (flatten pastel) */
+    .service-img {
+      background: #faf8f2 !important;
+      border-bottom: 1px solid rgba(201,169,110,0.2);
+    }
+
+    /* Pricing */
+    .price-card.popular {
+      border: 2px solid #c9a96e !important;
+      background: #fff !important;
+    }
+    .popular-badge {
+      background: #c9a96e !important;
+      color: #0a0e0c !important;
+      font-family: 'JetBrains Mono', monospace !important;
+      letter-spacing: 0.18em !important;
+      text-transform: uppercase;
+      border-radius: 0 !important;
+      font-size: 11px;
+    }
+    .price-amount {
+      color: #c9a96e !important;
+      font-family: 'Cormorant Garamond', serif !important;
+      font-weight: 400;
+    }
+    .price-type { color: #8a8a82 !important; }
+    .price-features li {
+      color: #1a1a1a;
+      font-size: 14px;
+    }
+    .price-table td {
+      font-family: 'Shippori Mincho', serif;
+      border-color: rgba(201,169,110,0.2) !important;
+    }
+    .pricing-other h3 {
+      font-family: 'Shippori Mincho', serif;
+      color: #1a1a1a;
+    }
+
+    /* Flow step numbers */
+    .step-num {
+      background: transparent !important;
+      border: 1px solid #c9a96e !important;
+      color: #c9a96e !important;
+      font-family: 'Cormorant Garamond', serif !important;
+      font-size: 28px !important;
+      font-weight: 400 !important;
+      border-radius: 50% !important;
+    }
+
+    /* Brand tags */
+    .brand-tag {
+      background: transparent !important;
+      border: 1px solid rgba(201,169,110,0.4) !important;
+      color: #1a1a1a !important;
+      font-family: 'JetBrains Mono', monospace !important;
+      border-radius: 0 !important;
+      font-size: 12px !important;
+      letter-spacing: 0.1em;
+    }
+
+    /* FAQ */
+    .faq-item summary {
+      font-family: 'Shippori Mincho', serif;
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+    .faq-item[open] summary { color: #c9a96e; }
+    .faq-item p { color: #555; font-family: 'Shippori Mincho', serif; }
+
+    /* Contact */
+    .phone-number, .email-address {
+      color: #c9a96e !important;
+      font-family: 'Cormorant Garamond', serif !important;
+    }
+    .contact-form label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #555;
+    }
+    .contact-form .required {
+      background: #c9a96e !important;
+      color: #0a0e0c !important;
+      border-radius: 0 !important;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      border-radius: 0 !important;
+      border: 1px solid rgba(201,169,110,0.3) !important;
+      font-family: 'Shippori Mincho', serif;
+      background: #faf8f2 !important;
+    }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      border-color: #c9a96e !important;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(201,169,110,0.15) !important;
+    }
+
+    /* Footer */
+    .footer {
+      background: #0a0e0c !important;
+      color: #8a8a82 !important;
+      border-top: 1px solid rgba(201,169,110,0.2);
+    }
+    .footer .logo-icon,
+    .footer .footer-brand > :first-child {
+      color: #c9a96e !important;
+    }
+    .footer-brand {
+      color: #e8e6df !important;
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 0.1em;
+    }
+    .footer-brand p { color: #8a8a82; font-family: 'Shippori Mincho', serif; letter-spacing: 0; }
+    .footer-links a {
+      color: #8a8a82 !important;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+    .footer-links a:hover { color: #c9a96e !important; }
+    .footer-bottom {
+      border-top: 1px solid rgba(201,169,110,0.15);
+      color: #666;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+    }
+
+    /* Hero badges if present */
+    .hero-badges span { color: #c9a96e; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.1em; }
+  </style>
 </head>
 <body>
 
@@ -21,7 +565,7 @@
 <header class="header">
   <div class="container header-inner">
     <a href="#" class="logo">
-      <span class="logo-icon">❄</span> EFFECT エアコンメンテナンス
+      <i class="fa-solid fa-snowflake logo-icon"></i> EFFECT エアコンメンテナンス
     </a>
     <button class="menu-toggle" aria-label="メニュー">
       <span></span><span></span><span></span>
@@ -36,21 +580,57 @@
   </div>
 </header>
 
-<!-- ヒーロー -->
-<section class="hero">
-  <div class="container hero-content">
-    <p class="hero-tag">地域密着 × プロの技術</p>
-    <h1>エアコンのお悩み、<br>すべて解決します。</h1>
-    <p class="hero-sub">クリーニング・修理・点検まで。<br>ご家庭から店舗・オフィスまで幅広く対応いたします。</p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn btn-primary btn-lg">無料お見積もり</a>
-      <a href="tel:090-6819-7955" class="btn btn-outline btn-lg">☎ 090-6819-7955</a>
+<!-- ヒーロー（高級路線） -->
+<section class="hero-lux">
+  <div class="lux-left">
+    <div class="lux-orb"></div>
+    <div class="lux-marker">EST. 2024 — HOKURIKU, JAPAN</div>
+
+    <div class="lux-subcopy">Small Care, Big Effect.</div>
+
+    <h1 class="lux-title">
+      長く使う、が<br>一番<em>エコ</em>。
+    </h1>
+
+    <p class="lux-desc">
+      エアコンの寿命を最大化することが、環境にも家計にも最善の選択。<br>
+      EFFECTは北陸三県で、建物と長く付き合うメンテナンスパートナーです。
+    </p>
+
+    <div class="lux-cta-group">
+      <a href="#contact" class="lux-cta">
+        <span>無料お見積もり</span>
+        <span class="arrow">→</span>
+      </a>
+      <a href="tel:090-6819-7955" class="lux-cta-sec"><i class="fa-solid fa-phone"></i> 090-6819-7955</a>
     </div>
-    <div class="hero-badges">
-      <span>✓ 出張費無料</span>
-      <span>✓ 即日対応可</span>
-      <span>✓ 作業後保証付き</span>
+  </div>
+
+  <div class="lux-right">
+    <div class="lux-qnum">PHILOSOPHY / 01</div>
+    <div class="lux-qlabel">Our Commitment</div>
+    <h2 class="lux-qhead">
+      設置から10年、15年。<br>
+      建物とともに<strong>息づく設備</strong>を、<br>
+      丁寧なケアで守り続ける。
+    </h2>
+
+    <div class="lux-stats">
+      <div>
+        <div class="lux-stat-value">15<span>yrs+</span></div>
+        <div class="lux-stat-label">Longevity</div>
+      </div>
+      <div>
+        <div class="lux-stat-value">30<span>%</span></div>
+        <div class="lux-stat-label">Energy Saved</div>
+      </div>
+      <div>
+        <div class="lux-stat-value">24<span>/7</span></div>
+        <div class="lux-stat-label">Partnership</div>
+      </div>
     </div>
+
+    <div class="lux-year">Beyond Maintenance</div>
   </div>
 </section>
 
@@ -60,17 +640,17 @@
     <h2 class="section-title">選ばれる<span>3つの理由</span></h2>
     <div class="reasons-grid">
       <div class="reason-card">
-        <div class="reason-icon">🔧</div>
+        <div class="reason-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
         <h3>技術力</h3>
         <p>国家資格保有のプロが作業。分解洗浄でエアコン内部の汚れを徹底除去します。</p>
       </div>
       <div class="reason-card">
-        <div class="reason-icon">💰</div>
+        <div class="reason-icon"><i class="fa-solid fa-coins"></i></div>
         <h3>明朗会計</h3>
         <p>作業前にお見積もりを提示。追加料金は一切いただきません。安心の固定料金制です。</p>
       </div>
       <div class="reason-card">
-        <div class="reason-icon">⚡</div>
+        <div class="reason-icon"><i class="fa-solid fa-bolt"></i></div>
         <h3>スピード対応</h3>
         <p>お電話から最短即日で訪問。急な故障やトラブルにも迅速に対応いたします。</p>
       </div>
@@ -85,7 +665,7 @@
     <div class="services-grid">
       <div class="service-card">
         <div class="service-img" style="background: linear-gradient(135deg, #e0f2fe, #bae6fd);">
-          <span class="service-emoji">🧹</span>
+          <i class="fa-solid fa-spray-can-sparkles service-emoji"></i>
         </div>
         <div class="service-body">
           <h3>エアコンクリーニング</h3>
@@ -94,7 +674,7 @@
       </div>
       <div class="service-card">
         <div class="service-img" style="background: linear-gradient(135deg, #fce7f3, #fbcfe8);">
-          <span class="service-emoji">🛠</span>
+          <i class="fa-solid fa-screwdriver-wrench service-emoji"></i>
         </div>
         <div class="service-body">
           <h3>修理・部品交換</h3>
@@ -103,7 +683,7 @@
       </div>
       <div class="service-card">
         <div class="service-img" style="background: linear-gradient(135deg, #d1fae5, #a7f3d0);">
-          <span class="service-emoji">📋</span>
+          <i class="fa-solid fa-clipboard-check service-emoji"></i>
         </div>
         <div class="service-body">
           <h3>定期点検・メンテナンス</h3>
@@ -112,7 +692,7 @@
       </div>
       <div class="service-card">
         <div class="service-img" style="background: linear-gradient(135deg, #fef3c7, #fde68a);">
-          <span class="service-emoji">🏢</span>
+          <i class="fa-solid fa-building service-emoji"></i>
         </div>
         <div class="service-body">
           <h3>業務用エアコン対応</h3>
@@ -130,32 +710,32 @@
     <p class="section-sub">ホテル・オフィス・店舗・工場など、あらゆる業務用エアコンに対応しています。</p>
     <div class="commercial-grid">
       <div class="commercial-card">
-        <div class="commercial-icon">🏨</div>
+        <div class="commercial-icon"><i class="fa-solid fa-hotel"></i></div>
         <h3>天井カセット型</h3>
         <p>4方向・2方向の天井埋込カセット型。ホテル客室やオフィスに多く採用されているタイプです。</p>
       </div>
       <div class="commercial-card">
-        <div class="commercial-icon">🏗</div>
+        <div class="commercial-icon"><i class="fa-solid fa-industry"></i></div>
         <h3>天井吊り型</h3>
         <p>天井から吊り下げるタイプ。工場や倉庫、大型店舗などの広い空間で使用されています。</p>
       </div>
       <div class="commercial-card">
-        <div class="commercial-icon">🏢</div>
+        <div class="commercial-icon"><i class="fa-solid fa-warehouse"></i></div>
         <h3>ビルトイン・ダクト型</h3>
         <p>天井内にダクトを通すタイプ。デザイン性を重視する店舗やホテルロビーに最適です。</p>
       </div>
       <div class="commercial-card">
-        <div class="commercial-icon">🏪</div>
+        <div class="commercial-icon"><i class="fa-solid fa-store"></i></div>
         <h3>床置き型</h3>
         <p>床に設置するタイプ。天井工事が不要で、サーバールームや厨房などに多く使われています。</p>
       </div>
       <div class="commercial-card">
-        <div class="commercial-icon">🔄</div>
+        <div class="commercial-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
         <h3>マルチエアコン</h3>
         <p>1台の室外機で複数の室内機を運転。ビルや集合住宅のスペース効率を最大化します。</p>
       </div>
       <div class="commercial-card">
-        <div class="commercial-icon">❄</div>
+        <div class="commercial-icon"><i class="fa-solid fa-snowflake"></i></div>
         <h3>パッケージエアコン</h3>
         <p>大型施設向けの高出力タイプ。商業施設・病院・学校などの大空間を快適に保ちます。</p>
       </div>
@@ -184,28 +764,28 @@
     </div>
     <div class="any-aircon-features">
       <div class="any-feature">
-        <div class="any-feature-icon">✅</div>
+        <div class="any-feature-icon"><i class="fa-solid fa-circle-check"></i></div>
         <div>
           <h3>家庭用も業務用もOK</h3>
           <p>壁掛け・天井カセット・床置き・マルチなど、すべてのタイプに対応しています。</p>
         </div>
       </div>
       <div class="any-feature">
-        <div class="any-feature-icon">✅</div>
+        <div class="any-feature-icon"><i class="fa-solid fa-circle-check"></i></div>
         <div>
           <h3>お掃除機能付きも対応</h3>
           <p>複雑な自動掃除機能付きエアコンも完全分解して徹底洗浄いたします。</p>
         </div>
       </div>
       <div class="any-feature">
-        <div class="any-feature-icon">✅</div>
+        <div class="any-feature-icon"><i class="fa-solid fa-circle-check"></i></div>
         <div>
           <h3>古い機種でも安心</h3>
           <p>製造年数が経った機種でも対応可能。部品の劣化状況も合わせて診断します。</p>
         </div>
       </div>
       <div class="any-feature">
-        <div class="any-feature-icon">✅</div>
+        <div class="any-feature-icon"><i class="fa-solid fa-circle-check"></i></div>
         <div>
           <h3>特殊設置もおまかせ</h3>
           <p>高所設置・狭所設置など難しい現場も経験豊富なスタッフが安全に作業します。</p>
@@ -351,17 +931,17 @@
     <div class="contact-wrapper">
       <div class="contact-info">
         <div class="contact-box">
-          <h3>☎ お電話でのお問い合わせ</h3>
+          <h3><i class="fa-solid fa-phone"></i>お電話でのお問い合わせ</h3>
           <a href="tel:090-6819-7955" class="phone-number">090-6819-7955</a>
           <p>受付時間：9:00〜19:00（年中無休）</p>
         </div>
         <div class="contact-box">
-          <h3>✉ メールでのお問い合わせ</h3>
+          <h3><i class="fa-solid fa-envelope"></i>メールでのお問い合わせ</h3>
           <a href="mailto:effectfujino@gmail.com" class="email-address">effectfujino@gmail.com</a>
           <p>24時間受付・最短即日ご返信</p>
         </div>
         <div class="contact-box">
-          <h3>📍 対応エリア</h3>
+          <h3><i class="fa-solid fa-location-dot"></i>対応エリア</h3>
           <p>富山県・石川県・福井県<br>※北陸三県全域対応いたします</p>
         </div>
       </div>
@@ -407,7 +987,7 @@
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
-        <span class="logo-icon">❄</span> EFFECT エアコンメンテナンス
+        <i class="fa-solid fa-snowflake logo-icon"></i> EFFECT エアコンメンテナンス
         <p>快適な空間をお届けするエアコン専門サービス</p>
         <p>代表：藤農 鉄也 ／ TEL：090-6819-7955</p>
       </div>
