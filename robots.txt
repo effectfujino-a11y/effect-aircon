@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://effectfujino-a11y.github.io/effect-aircon/sitemap.xml
