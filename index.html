@@ -25,49 +25,76 @@
       --bg-light: #f4f2ec;
       --accent: #c9a96e;
       --accent-deep: #a88a50;
+      --teal-deep: #0d3a4a;
+      --teal-mid: #1a5a70;
+      --cyan-bright: #7ec9d8;
       --text-light: #e8e6df;
       --text-muted: #8a8a82;
       --text-dark: #1a1a1a;
       --line: rgba(201, 169, 110, 0.3);
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
+      display: block;
       min-height: 92vh;
       position: relative;
       overflow: hidden;
       font-family: 'Shippori Mincho', serif;
     }
     .hero-lux .lux-left {
-      background: #f4f2ec;
-      color: var(--text-dark);
-      padding: 120px 56px 72px;
+      background:
+        radial-gradient(ellipse at 50% 55%, rgba(126, 201, 216, 0.35) 0%, transparent 45%),
+        linear-gradient(135deg, #0a2f3d 0%, #134758 50%, #0a2f3d 100%);
+      color: var(--text-light);
+      padding: 140px 10% 100px;
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
       overflow: hidden;
-      border-right: 1px solid rgba(201, 169, 110, 0.25);
+      min-height: 92vh;
     }
     .hero-lux .lux-left::before {
       content: '';
       position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(168, 138, 80, 0.18) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(168, 138, 80, 0.18) 1px, transparent 1px);
-      background-size: 80px 80px;
-      opacity: 0.6;
-      mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-      -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+        linear-gradient(rgba(126, 201, 216, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(126, 201, 216, 0.12) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 1;
+      mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
       pointer-events: none;
+    }
+    .hero-lux .lux-left::after {
+      content: '';
+      position: absolute;
+      left: 50%; top: 55%;
+      transform: translate(-50%, -50%);
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200, 240, 250, 0.5) 0%, rgba(126, 201, 216, 0.15) 35%, transparent 70%);
+      filter: blur(30px);
+      pointer-events: none;
+      animation: luxFloat 18s ease-in-out infinite;
     }
     .hero-lux .lux-orb {
       position: absolute;
-      width: 500px; height: 500px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 65%);
-      top: -100px; right: -150px;
-      filter: blur(10px);
-      animation: luxFloat 18s ease-in-out infinite;
+      width: 360px; height: 360px;
+      border: 1px solid rgba(126, 201, 216, 0.35);
+      top: 25%; right: 8%;
       pointer-events: none;
+      transform: rotate(45deg);
+      animation: luxFloat 22s ease-in-out infinite reverse;
+    }
+    .hero-lux .lux-orb::before {
+      content: '';
+      position: absolute;
+      inset: 20%;
+      border: 1px solid rgba(126, 201, 216, 0.25);
+    }
+    .hero-lux .lux-orb::after {
+      content: '';
+      position: absolute;
+      inset: 40%;
+      border: 1px solid rgba(126, 201, 216, 0.2);
     }
     @keyframes luxFloat {
       0%,100% { transform: translate(0,0) scale(1); }
@@ -78,7 +105,7 @@
       font-style: italic;
       font-weight: 300;
       font-size: clamp(18px, 2vw, 24px);
-      color: var(--accent-deep);
+      color: var(--cyan-bright);
       letter-spacing: 0.02em;
       margin-bottom: 32px;
       position: relative;
@@ -88,9 +115,17 @@
       content: '';
       display: inline-block;
       width: 40px; height: 1px;
-      background: var(--accent-deep);
+      background: var(--cyan-bright);
       vertical-align: middle;
       margin-right: 16px;
+    }
+    .hero-lux .lux-subcopy-jp {
+      font-family: 'Shippori Mincho', serif;
+      font-style: normal;
+      font-size: 14px;
+      color: rgba(200, 232, 240, 0.7);
+      letter-spacing: 0.08em;
+      margin-left: 4px;
     }
     .hero-lux h1.lux-title {
       font-family: 'Shippori Mincho', serif;
@@ -98,20 +133,21 @@
       font-size: clamp(38px, 5.4vw, 68px);
       line-height: 1.18;
       letter-spacing: 0.02em;
-      color: var(--text-dark);
+      color: #f0f7f9;
       margin: 0 0 36px;
       position: relative;
       z-index: 2;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
     }
     .hero-lux h1.lux-title em {
       font-style: normal;
-      color: #8a6e35;
+      color: var(--cyan-bright);
       font-weight: 700;
     }
     .hero-lux .lux-desc {
       font-size: 15px;
       line-height: 2;
-      color: #555;
+      color: rgba(200, 232, 240, 0.85);
       max-width: 480px;
       margin-bottom: 44px;
       position: relative;
@@ -130,9 +166,9 @@
       align-items: center;
       gap: 12px;
       padding: 16px 28px;
-      background: var(--accent);
-      color: #f4f2ec;
-      border: 1px solid var(--accent);
+      background: transparent;
+      color: var(--cyan-bright);
+      border: 1px solid var(--cyan-bright);
       text-decoration: none;
       font-family: 'JetBrains Mono', monospace;
       font-size: 12px;
@@ -145,19 +181,19 @@
     .hero-lux .lux-cta::before {
       content: '';
       position: absolute; inset: 0;
-      background: transparent;
+      background: var(--cyan-bright);
       transform: translateX(-100%);
       transition: transform 0.4s ease;
       z-index: -1;
     }
+    .hero-lux .lux-cta:hover::before { transform: translateX(0); }
     .hero-lux .lux-cta:hover {
-      background: transparent;
-      color: var(--accent-deep);
+      color: #0a2f3d;
     }
     .hero-lux .lux-cta .arrow { transition: transform 0.4s ease; }
     .hero-lux .lux-cta:hover .arrow { transform: translateX(6px); }
     .hero-lux .lux-cta-sec {
-      color: #555;
+      color: rgba(200, 232, 240, 0.8);
       text-decoration: none;
       font-family: 'JetBrains Mono', monospace;
       font-size: 12px;
@@ -165,7 +201,7 @@
       text-transform: uppercase;
       transition: color 0.3s ease;
     }
-    .hero-lux .lux-cta-sec:hover { color: var(--accent-deep); }
+    .hero-lux .lux-cta-sec:hover { color: var(--cyan-bright); }
     .hero-lux .lux-marker {
       position: absolute;
       left: 24px; top: 50%;
@@ -174,7 +210,7 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 10px;
       letter-spacing: 0.3em;
-      color: #7a6a45;
+      color: rgba(126, 201, 216, 0.6);
       white-space: nowrap;
     }
     .hero-lux .lux-right {
@@ -255,10 +291,45 @@
     .hero-lux .lux-year::before { content: '— '; }
     @media (max-width: 960px) {
       .hero-lux { grid-template-columns: 1fr; }
-      .hero-lux .lux-left { padding: 100px 24px 56px; min-height: 70vh; }
+      .hero-lux .lux-left { padding: 100px 18px 56px; min-height: 70vh; }
       .hero-lux .lux-right { padding: 64px 24px 56px; }
       .hero-lux .lux-marker { display: none; }
       .hero-lux .lux-stats { grid-template-columns: 1fr; gap: 18px; }
+    }
+    @media (max-width: 480px) {
+      .hero-lux .lux-subcopy {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: clip;
+        font-size: 11px !important;
+      }
+      .hero-lux .lux-subcopy::before {
+        width: 20px;
+        margin-right: 8px;
+      }
+      .hero-lux .lux-subcopy-jp {
+        font-size: 10px !important;
+      }
+      .hero-lux .lux-desc {
+        font-size: 12px !important;
+        line-height: 1.9;
+        white-space: nowrap;
+      }
+      .hero-lux h1.lux-title {
+        font-size: clamp(34px, 10vw, 46px);
+      }
+    }
+    @media (max-width: 380px) {
+      .hero-lux .lux-subcopy { font-size: 10px !important; }
+      .hero-lux .lux-desc { font-size: 11px !important; }
+    }
+    /* Commercial grid: single column on mobile for readability */
+    @media (max-width: 640px) {
+      .commercial-grid { grid-template-columns: 1fr !important; }
+    }
+    /* Keep "どんなエアコンも洗浄可能" on 1 line on mobile */
+    @media (max-width: 480px) {
+      .any-aircon .section-title { white-space: nowrap; font-size: clamp(20px, 5.5vw, 26px) !important; }
     }
 
     /* === Header override (beige + gold) === */
@@ -557,6 +628,392 @@
 
     /* Hero badges if present */
     .hero-badges span { color: #c9a96e; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.1em; }
+
+    /* Desktop logo bigger */
+    .header .logo {
+      font-size: 22px !important;
+      font-weight: 400 !important;
+    }
+    .header .logo-icon { font-size: 22px !important; }
+
+    /* === Mobile header fixes === */
+    @media (max-width: 768px) {
+      .header-inner { height: 68px; }
+      .header .logo {
+        font-size: 20px !important;
+        letter-spacing: 0.06em !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 84%;
+      }
+      .header .logo-icon { font-size: 20px !important; flex-shrink: 0; }
+      .menu-toggle { display: block !important; }
+      .nav { gap: 18px; }
+      .hero-lux .lux-left { padding-top: 90px; }
+    }
+    @media (max-width: 420px) {
+      .header .logo { font-size: 17px !important; }
+      .header .logo-icon { font-size: 18px !important; }
+    }
+    @media (max-width: 360px) {
+      .header .logo { font-size: 15px !important; letter-spacing: 0.04em !important; }
+      .header .logo-icon { font-size: 16px !important; }
+    }
+
+    /* ============================================ */
+    /* === ART PIVOT: Corrupted Air → Restored === */
+    /* ============================================ */
+    :root {
+      --art-bg-deep: #081f2a;
+      --art-bg-mid: #0a2f3d;
+      --art-bg-soft: #0e3a4b;
+      --art-line: rgba(126, 201, 216, 0.2);
+      --art-line-strong: rgba(126, 201, 216, 0.4);
+      --art-cyan: #7ec9d8;
+      --art-cyan-soft: rgba(126, 201, 216, 0.7);
+      --art-text: #e0eef2;
+      --art-muted: rgba(200, 232, 240, 0.6);
+    }
+    body { background: var(--art-bg-deep) !important; color: var(--art-text) !important; }
+
+    /* Header */
+    .header {
+      background: rgba(8, 31, 42, 0.92) !important;
+      border-bottom: 1px solid var(--art-line) !important;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .header.scrolled {
+      background: rgba(8, 31, 42, 0.98) !important;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.5) !important;
+    }
+    .header .logo { color: var(--art-text) !important; }
+    .header .logo-icon { color: var(--art-cyan) !important; }
+    .header .nav a { color: var(--art-muted) !important; }
+    .header .nav a:hover { color: var(--art-cyan) !important; }
+    .header .nav a.btn {
+      color: var(--art-text) !important;
+      border-color: var(--art-cyan) !important;
+    }
+    .header .nav a.btn:hover {
+      background: var(--art-cyan) !important;
+      color: var(--art-bg-deep) !important;
+    }
+    .header .menu-toggle span { background: var(--art-text) !important; }
+
+    /* All sections: dark teal art backgrounds */
+    .reasons, .services, .pricing, .flow, .faq, .contact,
+    .commercial, .any-aircon {
+      background: var(--art-bg-mid) !important;
+      position: relative;
+      color: var(--art-text) !important;
+    }
+    .services, .flow, .contact {
+      background: var(--art-bg-soft) !important;
+    }
+    .reasons::before, .services::before, .pricing::before,
+    .commercial::before, .any-aircon::before, .flow::before, .faq::before, .contact::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(var(--art-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--art-line) 1px, transparent 1px);
+      background-size: 80px 80px;
+      opacity: 0.5;
+      mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%);
+      pointer-events: none;
+    }
+    .reasons > *, .services > *, .pricing > *, .flow > *, .faq > *, .contact > *,
+    .commercial > *, .any-aircon > * { position: relative; z-index: 1; }
+
+    /* Section titles */
+    .section-title { color: var(--art-text) !important; }
+    .section-title span { color: var(--art-cyan) !important; }
+    .section-sub { color: var(--art-muted) !important; }
+
+    /* Cards */
+    .reason-card, .service-card, .commercial-card,
+    .price-card, .flow-step, .faq-item, .contact-box,
+    .any-feature {
+      background: rgba(255, 255, 255, 0.03) !important;
+      border: 1px solid var(--art-line) !important;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .reason-card:hover, .service-card:hover, .commercial-card:hover,
+    .any-feature:hover {
+      border-color: var(--art-cyan) !important;
+      background: rgba(126, 201, 216, 0.06) !important;
+    }
+    .reason-card h3, .service-card h3, .commercial-card h3,
+    .price-header h3, .flow-step h3, .contact-box h3,
+    .any-feature h3 {
+      color: var(--art-text) !important;
+    }
+    .reason-card p, .service-card p, .commercial-card p,
+    .flow-step p, .any-feature p, .faq-item p {
+      color: var(--art-muted) !important;
+    }
+
+    /* Icons → cyan */
+    .reason-icon {
+      color: var(--art-cyan) !important;
+      border-color: var(--art-line-strong) !important;
+      background: rgba(126, 201, 216, 0.05);
+    }
+    .service-emoji, .commercial-icon, .any-feature-icon {
+      color: var(--art-cyan) !important;
+    }
+    .commercial-icon { background: rgba(126, 201, 216, 0.08) !important; }
+    .service-img {
+      background: rgba(8, 31, 42, 0.6) !important;
+      border-bottom: 1px solid var(--art-line) !important;
+    }
+    .contact-box h3 i, .price-features li i,
+    .hero-badges i { color: var(--art-cyan) !important; }
+
+    /* Buttons */
+    .btn-primary {
+      background: var(--art-cyan) !important;
+      border-color: var(--art-cyan) !important;
+      color: var(--art-bg-deep) !important;
+    }
+    .btn-primary:hover {
+      background: transparent !important;
+      color: var(--art-cyan) !important;
+    }
+    .btn-outline {
+      border-color: var(--art-cyan) !important;
+      color: var(--art-text) !important;
+    }
+    .btn-outline:hover {
+      background: var(--art-cyan) !important;
+      color: var(--art-bg-deep) !important;
+    }
+
+    /* Pricing */
+    .price-card.popular {
+      border: 2px solid var(--art-cyan) !important;
+      background: rgba(126, 201, 216, 0.08) !important;
+    }
+    .price-card.popular h3,
+    .price-card.popular .price-type { color: var(--art-text) !important; }
+    .popular-badge {
+      background: var(--art-cyan) !important;
+      color: var(--art-bg-deep) !important;
+    }
+    .price-amount { color: var(--art-cyan) !important; }
+    .price-type { color: var(--art-muted) !important; }
+    .price-features li { color: var(--art-text); }
+    .pricing-other {
+      background: rgba(255, 255, 255, 0.03) !important;
+      border: 1px solid var(--art-line) !important;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: var(--art-text) !important;
+    }
+    .price-table { background: transparent !important; }
+    .price-table tr { background: transparent !important; }
+    .price-table td {
+      color: var(--art-text) !important;
+      background: transparent !important;
+      border-color: var(--art-line) !important;
+    }
+    .price-table td:last-child { color: var(--art-cyan) !important; }
+    .pricing-other h3 { color: var(--art-text) !important; }
+
+    /* Flow step */
+    .step-num {
+      background: transparent !important;
+      border-color: var(--art-cyan) !important;
+      color: var(--art-cyan) !important;
+    }
+
+    /* Brand tags */
+    .brand-tag {
+      border-color: var(--art-line-strong) !important;
+      color: var(--art-text) !important;
+    }
+
+    /* FAQ */
+    .faq-item summary { color: var(--art-text) !important; }
+    .faq-item[open] summary { color: var(--art-cyan) !important; }
+
+    /* Contact */
+    .phone-number, .email-address { color: var(--art-cyan) !important; }
+    .contact-box p { color: var(--art-muted); }
+    .contact-form label { color: var(--art-muted); }
+    .contact-form .required {
+      background: var(--art-cyan) !important;
+      color: var(--art-bg-deep) !important;
+    }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      background: rgba(8, 31, 42, 0.5) !important;
+      border-color: var(--art-line) !important;
+      color: var(--art-text) !important;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(200, 232, 240, 0.35); }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      border-color: var(--art-cyan) !important;
+      box-shadow: 0 0 0 2px rgba(126, 201, 216, 0.2) !important;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--art-bg-deep) !important;
+      border-top: 1px solid var(--art-line) !important;
+    }
+    .footer .logo-icon,
+    .footer-brand > :first-child { color: var(--art-cyan) !important; }
+    .footer-brand { color: var(--art-text) !important; }
+    .footer-brand p { color: var(--art-muted); }
+    .footer-links a { color: var(--art-muted) !important; }
+    .footer-links a:hover { color: var(--art-cyan) !important; }
+    .footer-bottom {
+      border-top-color: var(--art-line) !important;
+      color: var(--art-muted) !important;
+    }
+
+    /* Hero right-side: make it harmonize */
+    .hero-lux .lux-right {
+      background: var(--art-bg-soft) !important;
+      color: var(--art-text) !important;
+    }
+    .hero-lux .lux-qnum { color: var(--art-cyan) !important; }
+    .hero-lux .lux-qnum::after { background: var(--art-line); }
+    .hero-lux .lux-qlabel { color: var(--art-muted) !important; }
+    .hero-lux .lux-qhead { color: var(--art-text) !important; }
+    .hero-lux .lux-qhead strong { color: var(--art-cyan) !important; }
+    .hero-lux .lux-stats { border-top-color: var(--art-line) !important; }
+    .hero-lux .lux-stat-value { color: var(--art-text) !important; }
+    .hero-lux .lux-stat-value span { color: var(--art-cyan) !important; }
+    .hero-lux .lux-stat-label { color: var(--art-muted) !important; }
+    .hero-lux .lux-year { color: var(--art-muted) !important; }
+
+    /* === Hero process diagram === */
+    .lux-process {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 44px;
+      position: relative;
+      z-index: 2;
+      flex-wrap: wrap;
+    }
+    .lux-process-step {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 12px 18px;
+      border: 1px solid var(--art-line-strong);
+      background: rgba(126, 201, 216, 0.04);
+      min-width: 92px;
+      transition: all 0.3s ease;
+    }
+    .lux-process-step:hover {
+      border-color: var(--art-cyan);
+      background: rgba(126, 201, 216, 0.1);
+    }
+    .lux-process-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--art-cyan);
+    }
+    .lux-process-label {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 18px;
+      color: #f0f7f9;
+      letter-spacing: 0.08em;
+    }
+    .lux-process-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 12px;
+      color: rgba(200, 232, 240, 0.6);
+      letter-spacing: 0.03em;
+    }
+    .lux-process-arrow {
+      color: var(--art-cyan);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      opacity: 0.7;
+    }
+    @media (max-width: 520px) {
+      .lux-process { gap: 10px; }
+      .lux-process-step { padding: 10px 14px; min-width: 76px; }
+      .lux-process-label { font-size: 16px; }
+      .lux-process-en { font-size: 11px; }
+    }
+
+    /* === Data Strip (marquee) === */
+    .data-strip {
+      background: var(--art-bg-deep);
+      border-top: 1px solid var(--art-line);
+      border-bottom: 1px solid var(--art-line);
+      overflow: hidden;
+      position: relative;
+      z-index: 5;
+    }
+    .data-strip::before, .data-strip::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 120px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .data-strip::before {
+      left: 0;
+      background: linear-gradient(to right, var(--art-bg-deep), transparent);
+    }
+    .data-strip::after {
+      right: 0;
+      background: linear-gradient(to left, var(--art-bg-deep), transparent);
+    }
+    .data-strip-track {
+      display: flex;
+      width: max-content;
+      animation: dsScroll 48s linear infinite;
+      padding: 18px 0;
+    }
+    .data-strip-content {
+      display: inline-flex;
+      align-items: center;
+      gap: 32px;
+      padding-right: 32px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--art-cyan-soft);
+      white-space: nowrap;
+    }
+    .data-strip-content > span:not(.ds-dot) {
+      transition: color 0.3s ease;
+    }
+    .data-strip-content:hover > span:not(.ds-dot) {
+      color: var(--art-cyan);
+    }
+    .data-strip-content .ds-dot {
+      color: var(--art-cyan);
+      font-size: 6px;
+      opacity: 0.8;
+    }
+    @keyframes dsScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .data-strip-track { animation: none; }
+    }
   </style>
 </head>
 <body>
@@ -584,18 +1041,39 @@
 <section class="hero-lux">
   <div class="lux-left">
     <div class="lux-orb"></div>
-    <div class="lux-marker">EST. 2024 — HOKURIKU, JAPAN</div>
+    <div class="lux-marker">CORRUPTED AIR → RESTORED</div>
 
-    <div class="lux-subcopy">Small Care, Big Effect.</div>
+    <div class="lux-subcopy">Corrupted Air, Restored. <span class="lux-subcopy-jp">— 淀んだ空気を、取り戻す。</span></div>
 
     <h1 class="lux-title">
-      長く使う、が<br>一番<em>エコ</em>。
+      綺麗な空気を、<br><em>プロ</em>の手で。
     </h1>
 
     <p class="lux-desc">
-      エアコンの寿命を最大化することが、環境にも家計にも最善の選択。<br>
-      EFFECTは北陸三県で、建物と長く付き合うメンテナンスパートナーです。
+      エアコンの寿命を最大化することが、最もエコで賢い選択。<br>
+      EFFECTは、建物と長く付き合うメンテナンスパートナーです。<br>
+      ご家庭から法人のオフィス・店舗まで、幅広く対応。
     </p>
+
+    <div class="lux-process">
+      <div class="lux-process-step">
+        <span class="lux-process-num">01</span>
+        <span class="lux-process-label">分解</span>
+        <span class="lux-process-en">Disassemble</span>
+      </div>
+      <span class="lux-process-arrow">→</span>
+      <div class="lux-process-step">
+        <span class="lux-process-num">02</span>
+        <span class="lux-process-label">洗浄</span>
+        <span class="lux-process-en">Clean</span>
+      </div>
+      <span class="lux-process-arrow">→</span>
+      <div class="lux-process-step">
+        <span class="lux-process-num">03</span>
+        <span class="lux-process-label">再生</span>
+        <span class="lux-process-en">Restore</span>
+      </div>
+    </div>
 
     <div class="lux-cta-group">
       <a href="#contact" class="lux-cta">
@@ -606,33 +1084,37 @@
     </div>
   </div>
 
-  <div class="lux-right">
-    <div class="lux-qnum">PHILOSOPHY / 01</div>
-    <div class="lux-qlabel">Our Commitment</div>
-    <h2 class="lux-qhead">
-      設置から10年、15年。<br>
-      建物とともに<strong>息づく設備</strong>を、<br>
-      丁寧なケアで守り続ける。
-    </h2>
-
-    <div class="lux-stats">
-      <div>
-        <div class="lux-stat-value">15<span>yrs+</span></div>
-        <div class="lux-stat-label">Longevity</div>
-      </div>
-      <div>
-        <div class="lux-stat-value">30<span>%</span></div>
-        <div class="lux-stat-label">Energy Saved</div>
-      </div>
-      <div>
-        <div class="lux-stat-value">24<span>/7</span></div>
-        <div class="lux-stat-label">Partnership</div>
-      </div>
-    </div>
-
-    <div class="lux-year">Beyond Maintenance</div>
-  </div>
 </section>
+
+<!-- データストリップ（Corrupted Air / Herregraven風） -->
+<div class="data-strip" aria-hidden="true">
+  <div class="data-strip-track">
+    <span class="data-strip-content">
+      <span>CORRUPTED AIR</span><span class="ds-dot">●</span>
+      <span>RESTORED</span><span class="ds-dot">●</span>
+      <span>第二種電気工事士</span><span class="ds-dot">●</span>
+      <span>第二種冷媒フロン類取扱技術者</span><span class="ds-dot">●</span>
+      <span>ISHIKAWA · TOYAMA · FUKUI</span><span class="ds-dot">●</span>
+      <span>15 YRS+ LONGEVITY</span><span class="ds-dot">●</span>
+      <span>30% ENERGY SAVED</span><span class="ds-dot">●</span>
+      <span>24/7 PARTNERSHIP</span><span class="ds-dot">●</span>
+      <span>EST. 2024 — HOKURIKU, JAPAN</span><span class="ds-dot">●</span>
+      <span>BEYOND MAINTENANCE</span><span class="ds-dot">●</span>
+    </span>
+    <span class="data-strip-content" aria-hidden="true">
+      <span>CORRUPTED AIR</span><span class="ds-dot">●</span>
+      <span>RESTORED</span><span class="ds-dot">●</span>
+      <span>第二種電気工事士</span><span class="ds-dot">●</span>
+      <span>第二種冷媒フロン類取扱技術者</span><span class="ds-dot">●</span>
+      <span>ISHIKAWA · TOYAMA · FUKUI</span><span class="ds-dot">●</span>
+      <span>15 YRS+ LONGEVITY</span><span class="ds-dot">●</span>
+      <span>30% ENERGY SAVED</span><span class="ds-dot">●</span>
+      <span>24/7 PARTNERSHIP</span><span class="ds-dot">●</span>
+      <span>EST. 2024 — HOKURIKU, JAPAN</span><span class="ds-dot">●</span>
+      <span>BEYOND MAINTENANCE</span><span class="ds-dot">●</span>
+    </span>
+  </div>
+</div>
 
 <!-- 選ばれる理由 -->
 <section class="reasons">
@@ -642,12 +1124,12 @@
       <div class="reason-card">
         <div class="reason-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
         <h3>技術力</h3>
-        <p>国家資格保有のプロが作業。分解洗浄でエアコン内部の汚れを徹底除去します。</p>
+        <p>第二種電気工事士・第二種冷媒フロン類取り扱い技術者の有資格者が作業。分解洗浄でエアコン内部の汚れを徹底除去します。</p>
       </div>
       <div class="reason-card">
         <div class="reason-icon"><i class="fa-solid fa-coins"></i></div>
         <h3>明朗会計</h3>
-        <p>作業前にお見積もりを提示。追加料金は一切いただきません。安心の固定料金制です。</p>
+        <p>作業前にお見積もりを提示。追加料金なしの安心固定料金制。</p>
       </div>
       <div class="reason-card">
         <div class="reason-icon"><i class="fa-solid fa-bolt"></i></div>
@@ -669,7 +1151,7 @@
         </div>
         <div class="service-body">
           <h3>エアコンクリーニング</h3>
-          <p>高圧洗浄で内部のカビ・ホコリを徹底除去。嫌なニオイを解消し、冷暖房効率もアップします。</p>
+          <p>高圧洗浄でカビ・ホコリを徹底除去。ニオイを解消し冷暖房効率もアップ。</p>
         </div>
       </div>
       <div class="service-card">
@@ -696,7 +1178,7 @@
         </div>
         <div class="service-body">
           <h3>業務用エアコン対応</h3>
-          <p>天井埋込型・ビルトイン型など業務用エアコンもお任せください。店舗・オフィスに対応。</p>
+          <p>天井埋込・ビルトインなど業務用もお任せ。店舗・オフィスに対応。</p>
         </div>
       </div>
     </div>
@@ -706,13 +1188,13 @@
 <!-- 業務用エアコン対応 -->
 <section id="commercial" class="commercial">
   <div class="container">
-    <h2 class="section-title">業務用エアコンも<span>おまかせください</span></h2>
+    <h2 class="section-title">業務用エアコンも<br><span>おまかせください</span></h2>
     <p class="section-sub">ホテル・オフィス・店舗・工場など、あらゆる業務用エアコンに対応しています。</p>
     <div class="commercial-grid">
       <div class="commercial-card">
         <div class="commercial-icon"><i class="fa-solid fa-hotel"></i></div>
         <h3>天井カセット型</h3>
-        <p>4方向・2方向の天井埋込カセット型。ホテル客室やオフィスに多く採用されているタイプです。</p>
+        <p>天井埋込カセット型。ホテル客室やオフィスで多く使用。</p>
       </div>
       <div class="commercial-card">
         <div class="commercial-icon"><i class="fa-solid fa-industry"></i></div>
@@ -767,7 +1249,7 @@
         <div class="any-feature-icon"><i class="fa-solid fa-circle-check"></i></div>
         <div>
           <h3>家庭用も業務用もOK</h3>
-          <p>壁掛け・天井カセット・床置き・マルチなど、すべてのタイプに対応しています。</p>
+          <p>壁掛け・天井カセット・床置きなど、全タイプに対応。</p>
         </div>
       </div>
       <div class="any-feature">
@@ -799,7 +1281,7 @@
 <section id="pricing" class="pricing">
   <div class="container">
     <h2 class="section-title">料金<span>プラン</span></h2>
-    <p class="section-sub">※ 表示価格はすべて税込です。出張費・駐車場代は無料です。</p>
+    <p class="section-sub">※ 表示価格はすべて税込です。<br>出張費・駐車場代は無料です。</p>
     <div class="pricing-grid">
       <div class="price-card">
         <div class="price-header">
@@ -827,7 +1309,7 @@
           <span class="yen">¥</span>14,000<span class="tax">〜</span>
         </div>
         <ul class="price-features">
-          <li>✓ 完全分解洗浄</li>
+          <li>✓ 高圧洗浄クリーニング</li>
           <li>✓ お掃除ユニット分解清掃</li>
           <li>✓ 抗菌・防カビコート</li>
           <li>✓ 作業時間 約90分</li>
@@ -855,9 +1337,9 @@
     <div class="pricing-other">
       <h3>その他の料金</h3>
       <table class="price-table">
-        <tr><td>修理・診断料</td><td>¥3,000〜</td></tr>
-        <tr><td>ガス補充</td><td>¥8,000〜</td></tr>
-        <tr><td>室外機クリーニング</td><td>¥5,000</td></tr>
+        <tr><td>修理・診断料</td><td>¥5,000〜</td></tr>
+        <tr><td>ガス充填</td><td>¥15,000〜</td></tr>
+        <tr><td>室外機クリーニング</td><td>¥2,000〜</td></tr>
         <tr><td>2台目以降割引</td><td>1台あたり ¥1,000 OFF</td></tr>
         <tr><td>定期メンテナンス契約</td><td>年2回 ¥16,000〜</td></tr>
       </table>
@@ -888,7 +1370,7 @@
       <div class="flow-step">
         <div class="step-num">4</div>
         <h3>お支払い</h3>
-        <p>作業完了後にお支払い。現金・カード・電子マネー対応。</p>
+        <p>作業完了後にお支払い。現金・カード対応。</p>
       </div>
     </div>
   </div>
@@ -917,7 +1399,7 @@
       </details>
       <details class="faq-item">
         <summary>支払い方法は何がありますか？</summary>
-        <p>現金、クレジットカード（VISA/Master/JCB/AMEX）、PayPay、交通系ICに対応しております。</p>
+        <p>現金、クレジットカード（VISA/Master/JCB/AMEX）、PayPayに対応しております。</p>
       </details>
     </div>
   </div>
