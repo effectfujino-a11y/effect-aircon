@@ -2,6 +2,14 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <script>
+    // GitHub Pages → Cloudflare 自動転送（Cloudflareでは何も起きない）
+    (function(){
+      if (location.hostname === 'effectfujino-a11y.github.io') {
+        location.replace('https://effect-aircon.effectfujino.workers.dev/' + location.search + location.hash);
+      }
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="Og17seOPsWi-h19QxGGjSY33dDKOjdLsiNlcTk4RKMI" />
   <meta name="description" content="EFFECT｜北陸三県（富山・石川・福井）のエアコンクリーニング・メンテナンス専門業者。家庭用から業務用まで対応。壁掛け9,000円〜。お見積もり無料・即日対応可。">
