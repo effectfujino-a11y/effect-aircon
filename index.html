@@ -1794,7 +1794,8 @@
       line-break: strict;
       text-wrap: balance;
     }
-    body .lux-desc .nb {
+    body .lux-desc .nb,
+    body .nb {
       display: inline-block;
       white-space: nowrap;
     }
@@ -2177,6 +2178,16 @@
         margin: 0 !important;
       }
       body .price-card.popular { transform: none !important; }
+      /* Mobile cards: reduce padding & font so long single-line phrases fit */
+      body .reason-card, body .service-card .service-body,
+      body .commercial-card, body .any-feature, body .flow-step {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      body .reason-card p, body .service-card p, body .commercial-card p,
+      body .flow-step p, body .any-feature p {
+        font-size: 13.5px !important;
+      }
     }
     @media (max-width: 380px) {
       body .lux-process-step { padding: 8px 4px !important; }
@@ -2334,7 +2345,7 @@
         </div>
         <div class="service-body">
           <h3>修理・部品交換</h3>
-          <p>冷えない・水漏れ・異音など各種トラブルに対応。メーカー問わず修理いたします。</p>
+          <p>冷えない・水漏れ・異音などに対応。<br>メーカー問わず修理いたします。</p>
         </div>
       </div>
       <div class="service-card">
@@ -2343,7 +2354,7 @@
         </div>
         <div class="service-body">
           <h3>定期点検・メンテナンス</h3>
-          <p>年間契約で定期メンテナンス。故障を未然に防ぎ、エアコンの寿命を延ばします。</p>
+          <p>年間契約で定期メンテナンス。<br>故障を防ぎ、寿命を延ばします。</p>
         </div>
       </div>
       <div class="service-card">
@@ -2352,7 +2363,7 @@
         </div>
         <div class="service-body">
           <h3>業務用エアコン対応</h3>
-          <p>天井埋込・ビルトインなど業務用もお任せ。店舗・オフィスに対応。</p>
+          <p><span class="nb">天井埋込・ビルトインなど業務用もお任せ。</span><br><span class="nb">店舗・オフィスに対応。</span></p>
         </div>
       </div>
     </div>
