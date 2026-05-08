@@ -2188,6 +2188,11 @@
       body .flow-step p, body .any-feature p {
         font-size: 13.5px !important;
       }
+      body .commercial-card,
+      body .commercial-card .commercial-icon ~ * { /* tighter padding/font for long phrases */ }
+      body .commercial-card { padding: 28px 14px !important; }
+      body .commercial-card p { font-size: 12px !important; line-height: 1.6 !important; }
+      body .any-feature p { font-size: 12.5px !important; }
     }
     @media (max-width: 380px) {
       body .lux-process-step { padding: 8px 4px !important; }
@@ -2379,17 +2384,17 @@
       <div class="commercial-card">
         <div class="commercial-icon"><i class="fa-solid fa-hotel"></i></div>
         <h3>天井カセット型</h3>
-        <p>天井埋込カセット型。ホテル客室やオフィスで多く使用。</p>
+        <p>天井埋込カセット型。<br><span class="nb">ホテル客室やオフィスで多く使用。</span></p>
       </div>
       <div class="commercial-card">
         <div class="commercial-icon"><i class="fa-solid fa-industry"></i></div>
         <h3>天井吊り型</h3>
-        <p>天井から吊り下げるタイプ。工場や倉庫、大型店舗などの広い空間で使用されています。</p>
+        <p>天井から吊り下げるタイプ。<br><span class="nb">工場や倉庫、大型店舗などの広い空間で使用されています。</span></p>
       </div>
       <div class="commercial-card">
         <div class="commercial-icon"><i class="fa-solid fa-warehouse"></i></div>
         <h3>ビルトイン・ダクト型</h3>
-        <p>天井内にダクトを通すタイプ。デザイン性を重視する店舗やホテルロビーに最適です。</p>
+        <p>天井内にダクトを通すタイプ。<br><span class="nb">デザイン性を重視する店舗やホテルロビーに最適です。</span></p>
       </div>
       <div class="commercial-card">
         <div class="commercial-icon"><i class="fa-solid fa-store"></i></div>
@@ -2399,12 +2404,12 @@
       <div class="commercial-card">
         <div class="commercial-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
         <h3>マルチエアコン</h3>
-        <p>1台の室外機で複数の室内機を運転。ビルや集合住宅のスペース効率を最大化します。</p>
+        <p>1台の室外機で複数の室内機を運転。<br><span class="nb">ビルや集合住宅のスペース効率を最大化します。</span></p>
       </div>
       <div class="commercial-card">
         <div class="commercial-icon"><i class="fa-solid fa-snowflake"></i></div>
         <h3>パッケージエアコン</h3>
-        <p>大型施設向けの高出力タイプ。商業施設・病院・学校などの大空間を快適に保ちます。</p>
+        <p>大型施設向けの高出力タイプ。<br><span class="nb">商業施設・病院・学校などの大空間を快適に保ちます。</span></p>
       </div>
     </div>
   </div>
@@ -2434,7 +2439,7 @@
         <div class="any-feature-icon"><i class="fa-solid fa-circle-check"></i></div>
         <div>
           <h3>家庭用も業務用もOK</h3>
-          <p>壁掛け・天井カセット・床置きなど、全タイプに対応。</p>
+          <p><span class="nb">壁掛け・天井カセット・床置きなど、</span><br><span class="nb">全タイプに対応。</span></p>
         </div>
       </div>
       <div class="any-feature">
