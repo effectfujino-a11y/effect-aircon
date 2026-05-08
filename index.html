@@ -1781,6 +1781,21 @@
       margin: 0 auto 36px !important;
       text-align: center !important;
       white-space: normal !important;
+      word-break: auto-phrase !important;
+      line-break: strict !important;
+      overflow-wrap: break-word !important;
+      text-wrap: pretty !important;
+    }
+    body .hero-lux .lux-title,
+    body .section-title,
+    body .section-sub {
+      word-break: auto-phrase;
+      line-break: strict;
+      text-wrap: balance;
+    }
+    body .lux-desc .nb {
+      display: inline-block;
+      white-space: nowrap;
     }
 
     body .lux-process {
@@ -2208,9 +2223,9 @@
     </h1>
 
     <p class="lux-desc">
-      エアコンの寿命を最大化することが、最もエコで賢い選択。<br>
-      EFFECTは、建物と長く付き合うメンテナンスパートナーです。<br>
-      ご家庭から法人のオフィス・店舗まで、幅広く対応。
+      <span class="nb">エアコンの寿命を</span><span class="nb">最大化することが、</span><span class="nb">最もエコで賢い選択。</span><br>
+      <span class="nb">EFFECTは、</span><span class="nb">建物と長く付き合う</span><span class="nb">メンテナンスパートナーです。</span><br>
+      <span class="nb">ご家庭から法人の</span><span class="nb">オフィス・店舗まで、</span><span class="nb">幅広く対応。</span>
     </p>
 
     <div class="lux-process">
